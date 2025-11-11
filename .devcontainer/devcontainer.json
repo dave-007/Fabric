@@ -1,5 +1,30 @@
 {
+  "name": "Universal + Python 3.13",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
-  }
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.13"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.vscode-python-envs",
+        "GitHub.copilot"
+      ]
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh"
 }
