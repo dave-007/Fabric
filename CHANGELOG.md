@@ -1,5 +1,62 @@
 # Changelog
 
+## v1.4.400 (2026-02-05)
+
+### PR [#1986](https://github.com/danielmiessler/Fabric/pull/1986) by [ksylvan](https://github.com/ksylvan): Support Anthropic Opus 4.6
+
+- Upgrade anthropic-sdk-go from v1.20.0 to v1.21.0
+- Add `ClaudeOpus4_6` to supported Anthropic model list
+- Remove unused indirect dependencies from go.mod and go.sum
+- Clean up legacy protobuf and gRPC version references
+- Drop unused table writer and console dependencies
+
+## v1.4.399 (2026-02-03)
+
+### PR [#1983](https://github.com/danielmiessler/Fabric/pull/1983) by [dependabot](https://github.com/apps/dependabot): chore(deps): bump @isaacs/brace-expansion from 5.0.0 to 5.0.1 in /web in the npm_and_yarn group across 1 directory
+
+- Updated @isaacs/brace-expansion dependency from version 5.0.0 to 5.0.1 in the web directory
+
+## v1.4.398 (2026-02-03)
+
+### PR [#1981](https://github.com/danielmiessler/Fabric/pull/1981) by [infinitelyloopy-bt](https://github.com/infinitelyloopy-bt): fix(azure): support GPT-5 and o-series reasoning models
+
+- Fix Azure OpenAI integration to support GPT-5 and o-series reasoning models
+- Update default API version from 2024-05-01-preview to 2025-04-01-preview (required for o-series and GPT-5 models)
+- Remove NeedsRawMode override that always returned false, inheriting parent logic that correctly skips temperature/top_p for reasoning models
+- Add /responses route to deployment middleware for future v1 API support
+- Style: remove trailing blank line in azure.go to fix gofmt check
+
+## v1.4.397 (2026-01-31)
+
+### PR [#1979](https://github.com/danielmiessler/Fabric/pull/1979) by [ksylvan](https://github.com/ksylvan): Update Anthropic SDK to v1.20.0 and reorganize model definitions
+
+- Feat: update Anthropic SDK to v1.20.0 and reorganize model definitions
+- Bump `anthropic-sdk-go` dependency from v1.19.0 to v1.20.0
+- Add deprecation notice for pre-February 2026 legacy models
+- Add new Claude Sonnet 4.0 and Opus 4.0 model aliases
+- Extend 1M context beta support to all Sonnet 4 variants
+
+## v1.4.396 (2026-01-30)
+
+### PR [#1975](https://github.com/danielmiessler/Fabric/pull/1975) by [koriyoshi2041](https://github.com/koriyoshi2041): feat: add suggest_moltbot_command pattern for Moltbot (formerly Clawdbot) CLI
+
+- Added new pattern for suggesting Moltbot CLI commands based on natural language intent
+- Fixed multi-command output format inconsistency to preserve pipe-friendly behavior
+- Updated all CLI references and command examples to use new `moltbot` binary name
+- Added new dictionary words for VSCode spellcheck and fixed markdown table formatting
+
+### PR [#1978](https://github.com/danielmiessler/Fabric/pull/1978) by [ksylvan](https://github.com/ksylvan): chore: remove OAuth support from Anthropic client
+
+- Remove OAuth support from Anthropic client and delete related OAuth files
+- Simplify configuration handling to check only API key instead of OAuth credentials
+- Clean up imports and unused variables in anthropic.go
+- Update server configuration methods to remove OAuth references
+- Remove OAuth-related environment variables from configuration
+
+### Direct commits
+
+- Docs: fix ChangeLog snippet for PR 1975
+
 ## v1.4.395 (2026-01-25)
 
 ### PR [#1972](https://github.com/danielmiessler/Fabric/pull/1972) by [ksylvan](https://github.com/ksylvan): More node package updates: remove cn, fix string and request vulnerabilities
